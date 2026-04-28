@@ -1,0 +1,122 @@
+/* Reusing .main from home.css */
+.main {
+  max-width: 1200px;
+  margin: 1.5rem auto 2.5rem;
+}
+
+/* Base wrapper to utilize space */
+.roster-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* List element styling */
+.user-roster-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header row (fixed layout) */
+.roster-header {
+  display: flex;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #4b5563;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid #f3f4f6;
+  margin-bottom: 0.5rem;
+}
+
+/* Updated columns for Header */
+.roster-header > div:nth-child(1) {
+  flex: 2;
+} /* Name */
+.roster-header > div:nth-child(2) {
+  flex: 2.5;
+} /* Email */
+.roster-header > div:nth-child(3) {
+  flex: 3;
+} /* NEW: Department */
+.roster-header > div:nth-child(4) {
+  flex: 1;
+} /* Role */
+.roster-header > div:nth-child(5) {
+  flex: 2;
+  text-align: right;
+} /* Actions */
+
+/* Individual list item row */
+.roster-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.95rem;
+  color: #1f2937;
+  gap: 20px;
+}
+/* Updated columns for Row Data */
+.roster-row > div:nth-child(1) {
+  flex: 2;
+} /* Name */
+.roster-row > div:nth-child(2) {
+  flex: 2.5;
+} /* Email */
+.roster-row > div:nth-child(3) {
+  flex: 3;
+  font-size: 0.85rem;
+  color: #6b7280;
+} /* NEW: Department (Smaller font) */
+.roster-row > div:nth-child(4) {
+  flex: 1;
+} /* Role */
+.roster-row > div:nth-child(5) {
+  flex: 2;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+} /* Actions */
+
+/* Alternate row background for readability */
+.roster-row:nth-child(even) {
+  background: #f9fafb;
+  margin: 0 -1.5rem; /* Extend background to wrapper edge */
+  padding: 1rem 1.5rem;
+}
+
+/* Role pill styling (Inherits base from home.css) */
+
+/* Specific color overrides */
+.role-admin {
+  background: #facc15; /* Yellow */
+  color: #111827;
+}
+
+.role-student {
+  background: #3b82f6; /* Blue */
+  color: #ffffff;
+}
+
+/* Action Buttons (now inheriting base from home.css) */
+.promote-btn:hover {
+  background: #15803d;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* Placeholder for Admin row (now inherits base from home.css) */
+
+/* Empty state */
+.roster-empty-text {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  padding: 3rem 0;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources Exchange</title>
+
+  <link rel="stylesheet" href="../styles/home.css" />
+
+  <link rel="stylesheet" href="../styles/resources.css" />
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+
+<div class="page">
+
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a href="prehome.html" target="_blank" class="nav-left-link">
+        <div class="nav-left">
+          <div class="logo-circle">HW</div>
+          <div class="nav-title">
+            <span class="nav-title-main">Student Hub</span>
+            <span class="nav-title-sub">Heriot-Watt University</span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="nav-center">
+        <ul class="nav-menu">
+          <li><a id="dashLink" href="./student_home.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+          <li><a href="Events.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+          <li><a href="calendar.html"><i class="fa-regular fa-calendar"></i>Calendar</a></li>
+          <li><a href="lostfound.html"><i class="fa-solid fa-magnifying-glass-location"></i>Lost &amp; Found</a></li>
+          <li><a href="resources.html" class="active"><i class="fa-solid fa-layer-group"></i>Resources</a></li>
+          <li><a href="noticeboard.html"><i class="fa-solid fa-bullhorn"></i>Notices</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+  <span id="rolePill" class="role-pill"></span>
+
+  <div class="avatar-wrapper">
+    <div class="avatar-circle" id="avatarCircle"></div>
+    <div class="avatar-menu">
+      <span class="avatar-menu-label" id="avatarLabel"></span>
+      <a href="./profile.html" class="avatar-menu-link">Profile</a>
+      <a href="login.html" class="avatar-menu-link logout-link">Logout</a>
+    </div>
+  </div>
+</div>
+  </header>
+
+  <main class="main">
+
+    <div class="resources-header">
+      <div>
+        <h1>Resources Exchange</h1>
+        <p>Share and access study materials (Admin approval required)</p>
+      </div>
+      <button class="share-btn" id="openShareModal">
+        <i class="fa-solid fa-plus"></i> Share Resource
+      </button>
+    </div>
+    
+    <section class="lf-tabs-row">
+      <button class="lf-tab lf-tab-active" id="approvedTab" data-tab="approved">
+        Available Resources (<span id="approvedCount">0</span>)
+      </button>
+      <button class="lf-tab" id="pendingTab" data-tab="pending" style="display: none;">
+        Pending Approval (<span id="pendingCount">0</span>)
+      </button>
+    </section>
+
+    <section class="lf-list-wrapper">
+      <div class="lf-list" id="approvedList">
+        <p class="lf-empty-text">Loading approved resources...</p>
+      </div>
+      <div class="lf-list lf-hidden" id="pendingList">
+         <p class="lf-empty-text">Loading pending resources...</p>
+      </div>
+    </section>
+
+  </main> </div> 
+  
+<div id="resourceModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModalBtn" class="modal-close">&times;</button>
+    <h3>Share a Resource</h3>
+    <p style="font-size: 0.95rem; margin-top: -10px; color: #e0e0ff;">Upload a file for peer-to-peer exchange.</p>
+
+    <form id="resourceForm" enctype="multipart/form-data" class="modal-form">
+      <div class="modal-scroll-area">
+          <div class="form-group">
+            <label for="title">Resource Title</label>
+            <input type="text" name="title" placeholder="Resource Title" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Description (optional)</label>
+            <textarea name="description" placeholder="Description (optional)" rows="4"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="fileUpload">Upload File (optional)</label>
+            <input type="file" name="file" id="fileUpload" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.zip">
+          </div>
+      </div>
+
+      <div class="modal-actions">
+          <button type="submit" class="modal-btn primary">Share Resource</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../scripts/nav.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/resources.js"></script>
+
+</body>
+</html>

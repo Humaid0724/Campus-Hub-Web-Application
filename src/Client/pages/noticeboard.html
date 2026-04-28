@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campus Hub - Notice Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles/home.css" />
+
+    <link rel="stylesheet" href="../styles/noticeboard.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="navbar">
+        <div class="nav-inner">
+          <a href="prehome.html" target="_blank" class="nav-left-link">
+            <div class="nav-left">
+              <div class="logo-circle">HW</div>
+              <div class="nav-title">
+                <span class="nav-title-main">Student Hub</span>
+                <span class="nav-title-sub">Heriot-Watt University</span>
+              </div>
+            </div>
+          </a>
+
+          <nav class="nav-center">
+            <ul class="nav-menu">
+              <li>
+                <a id="dashLink" href="#"
+                  ><i class="fa-solid fa-gauge"></i>Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="./Events.html"
+                  ><i class="fa-solid fa-calendar-days"></i>Events</a
+                >
+              </li>
+              <li>
+                <a href="./calendar.html"
+                  ><i class="fa-regular fa-calendar"></i>Calendar</a
+                >
+              </li>
+              <li>
+                <a href="./lostfound.html"
+                  ><i class="fa-solid fa-magnifying-glass-location"></i>Lost
+                  &amp; Found</a
+                >
+              </li>
+              <li>
+                <a href="./resources.html"
+                  ><i class="fa-solid fa-layer-group"></i>Resources</a
+                >
+              </li>
+
+              <li>
+                <a href="./noticeboard.html" class="active">
+                  <i class="fa-solid fa-bullhorn"></i>Notices
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-right">
+            <span class="role-pill role-student" id="rolePill">
+              <i class="fa-solid fa-user-graduate"></i> Student
+            </span>
+
+            <div class="avatar-wrapper">
+              <div class="avatar-circle" id="avatarCircle"></div>
+
+              <div class="avatar-menu">
+                <span class="avatar-menu-label" id="avatarLabel"
+                  >Signed in as Student</span
+                >
+                <a href="./profile.html" class="avatar-menu-link">Profile</a>
+                <a href="login.html" class="avatar-menu-link logout-link"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="notice-header">
+          <div>
+            <h1 class="notice-title">Notice Board</h1>
+            <p class="notice-subtitle">
+              Stay updated with official university announcements
+            </p>
+          </div>
+          <button class="create-notice-btn" id="openCreateModal">
+            <i class="fa-solid fa-plus"></i> Create Notice
+          </button>
+        </section>
+
+        <section class="notices-wrapper">
+          <div class="notices-list" id="noticesList">
+            <p class="notice-empty-text">Loading notices...</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden" id="createModal">
+      <div class="modal-content">
+        <button id="closeModal" class="modal-close">&times;</button>
+        <h3>Create New Notice</h3>
+        <p style="font-size: 0.95rem; margin-top: -10px; color: #e0e0ff">
+          Post a new announcement to the campus community.
+        </p>
+
+        <form id="createNoticeForm" class="modal-form">
+          <div class="form-group">
+            <label for="noticeTitle">Title</label>
+            <input
+              type="text"
+              id="noticeTitle"
+              required
+              placeholder="Enter notice title"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="noticeContent">Content</label>
+            <textarea
+              id="noticeContent"
+              required
+              placeholder="Enter notice content"
+            ></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="modal-btn danger" id="cancelCreate">
+              Cancel
+            </button>
+            <button type="submit" class="modal-btn primary">
+              Create Notice
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/noticeboard.js"></script>
+  </body>
+</html>

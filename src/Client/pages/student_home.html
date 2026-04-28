@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campus Hub - Student Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="../styles/home.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- ===== NAVBAR (STUDENT) ===== -->
+      <header class="navbar">
+        <div class="nav-inner">
+          <!-- Left: logo + titles -->
+          <a href="prehome.html" target="_blank" class="nav-left-link">
+            <div class="nav-left">
+              <div class="logo-circle">HW</div>
+              <div class="nav-title">
+                <span class="nav-title-main">Student Hub</span>
+                <span class="nav-title-sub">Heriot-Watt University</span>
+              </div>
+            </div>
+          </a>
+
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <!-- Center: menu -->
+          <nav class="nav-center">
+            <ul class="nav-menu">
+              <!-- Dashboard — nav.js will fix link -->
+              <li>
+                <a id="dashLink" href="#" class="active">
+                  <i class="fa-solid fa-gauge"></i>Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="./Events.html"
+                  ><i class="fa-solid fa-calendar-days"></i>Events</a
+                >
+              </li>
+              <li>
+                <a href="./calendar.html"
+                  ><i class="fa-regular fa-calendar"></i>Calendar</a
+                >
+              </li>
+              <li>
+                <a href="./lostfound.html"
+                  ><i class="fa-solid fa-magnifying-glass-location"></i>Lost
+                  &amp; Found</a
+                >
+              </li>
+              <li>
+                <a href="./resources.html"
+                  ><i class="fa-solid fa-layer-group"></i>Resources</a
+                >
+              </li>
+              <li>
+                <a href="./noticeboard.html"
+                  ><i class="fa-solid fa-bullhorn"></i>Notices</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Right: role + avatar -->
+          <div class="nav-right">
+            <span id="rolePill" class="role-pill"></span>
+
+            <div class="avatar-wrapper">
+              <div class="avatar-circle" id="avatarCircle"></div>
+
+              <div class="avatar-menu">
+                <span class="avatar-menu-label" id="avatarLabel"></span>
+                <a href="./profile.html" class="avatar-menu-link">Profile</a>
+                <a href="login.html" class="avatar-menu-link logout-link"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <main class="main">
+        <!-- Banner / welcome -->
+        <section class="banner">
+          <div class="banner-title-row">
+            <h1>Welcome back, student!</h1>
+            <span class="banner-emoji">👋</span>
+          </div>
+          <p>Here's what's happening at Heriot-Watt today.</p>
+
+          <div class="metrics-row">
+            <a href="Events.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Upcoming Events</span>
+                  <span class="metric-icon">
+                    <i class="fa-regular fa-calendar"></i>
+                  </span>
+                </div>
+                <div class="metric-value" id="studentUpcomingEvents">0</div>
+                <div class="metric-sub">events this week</div>
+              </article>
+            </a>
+
+            <a href="calendar.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Pending Tasks</span>
+                  <span class="metric-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                </div>
+                <div class="metric-value" id="studentPendingTasks">0</div>
+                <div class="metric-sub">tasks to complete</div>
+              </article>
+            </a>
+
+            <a href="calendar.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">My RSVPs</span>
+                  <span class="metric-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                  </span>
+                </div>
+                <div class="metric-value" id="studentRsvps">0</div>
+                <div class="metric-sub">events you're attending</div>
+              </article>
+            </a>
+
+            <a href="noticeboard.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Notices</span>
+                  <span class="metric-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                  </span>
+                </div>
+                <div class="metric-value" id="studentUnreadNotices">0</div>
+                <div class="metric-sub">announcements</div>
+              </article>
+            </a>
+          </div>
+        </section>
+
+        <h2 class="section-heading">My Overview</h2>
+
+        <section class="dashboard-grid">
+          <article class="dash-widget schedule-widget">
+            <div class="widget-header">
+              <h3><i class="fa-regular fa-clock"></i> Up Next</h3>
+              <a href="calendar.html" class="widget-link">View Calendar</a>
+            </div>
+            <div id="dashboard-schedule-list" class="widget-content">
+              <p class="empty-state">Loading schedule...</p>
+            </div>
+          </article>
+
+          <article class="dash-widget task-widget">
+            <div class="widget-header">
+              <h3><i class="fa-solid fa-list-check"></i> Priority Tasks</h3>
+              <a href="calendar.html" class="widget-link">Manage</a>
+            </div>
+            <div id="dashboard-task-list" class="widget-content">
+              <p class="empty-state">Loading tasks...</p>
+            </div>
+          </article>
+
+          <article class="dash-widget notice-widget">
+            <div class="widget-header">
+              <h3><i class="fa-solid fa-thumbtack"></i> Campus Alert</h3>
+            </div>
+            <div id="dashboard-notice-content" class="widget-content">
+              <p class="empty-state">Checking for notices...</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="../scripts/student_home.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/footer.js"></script>
+  </body>
+</html>

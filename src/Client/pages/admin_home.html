@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campus Hub - Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/home.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="navbar">
+        <div class="nav-inner">
+          <a href="prehome.html" target="_blank" class="nav-left-link">
+            <div class="nav-left">
+              <div class="logo-circle">HW</div>
+              <div class="nav-title">
+                <span class="nav-title-main">Student Hub</span>
+                <span class="nav-title-sub">Heriot-Watt University</span>
+              </div>
+            </div>
+          </a>
+
+          <nav class="nav-center">
+            <ul class="nav-menu">
+              <li>
+                <a href="student_home.html" class="active"
+                  ><i class="fa-solid fa-gauge"></i>Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="Events.html"
+                  ><i class="fa-solid fa-calendar-days"></i>Events</a
+                >
+              </li>
+              <li>
+                <a href="calendar.html"
+                  ><i class="fa-regular fa-calendar"></i>Calendar</a
+                >
+              </li>
+              <li>
+                <a href="lostfound.html"
+                  ><i class="fa-solid fa-magnifying-glass-location"></i>Lost &
+                  Found</a
+                >
+              </li>
+              <li>
+                <a href="resources.html"
+                  ><i class="fa-solid fa-layer-group"></i>Resources</a
+                >
+              </li>
+              <li>
+                <a href="noticeboard.html"
+                  ><i class="fa-solid fa-bullhorn"></i>Notices</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-right">
+            <span class="role-pill role-admin" id="rolePill">
+              <i class="fa-solid fa-crown"></i>Admin
+            </span>
+
+            <div class="avatar-wrapper">
+              <div class="avatar-circle" id="avatarCircle"></div>
+
+              <div class="avatar-menu">
+                <span class="avatar-menu-label" id="avatarLabel"
+                  >Signed in as Admin</span
+                >
+                <a href="./profile.html" class="avatar-menu-link">Profile</a>
+                <a href="login.html" class="avatar-menu-link logout-link"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="banner">
+          <div class="banner-title-row">
+            <h1>Welcome back, admin!</h1>
+            <span class="banner-emoji">👋</span>
+          </div>
+          <p>Here's what's happening at Heriot-Watt today.</p>
+
+          <div class="metrics-row">
+            <a href="Events.html?tab=pending" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Pending Events</span>
+                  <span class="metric-icon"
+                    ><i class="fa-regular fa-calendar"></i
+                  ></span>
+                </div>
+                <div class="metric-value" id="adminPendingEvents">0</div>
+                <div class="metric-sub">events to review</div>
+              </article>
+            </a>
+
+            <a href="resources.html?tab=pending" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Pending Resources</span>
+                  <span class="metric-icon"
+                    ><i class="fa-solid fa-layer-group"></i
+                  ></span>
+                </div>
+                <div class="metric-value" id="adminPendingResources">0</div>
+                <div class="metric-sub">resources to review</div>
+              </article>
+            </a>
+
+            <a href="noticeboard.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Notices</span>
+                  <span class="metric-icon"
+                    ><i class="fa-solid fa-bullhorn"></i
+                  ></span>
+                </div>
+                <div class="metric-value" id="adminNoticesCount">0</div>
+                <div class="metric-sub">published notices</div>
+              </article>
+            </a>
+
+            <a href="user_management.html" class="metric-link">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span class="metric-title">Total Students</span>
+                  <span class="metric-icon"
+                    ><i class="fa-solid fa-user-graduate"></i
+                  ></span>
+                </div>
+                <div class="metric-value" id="adminTotalStudents">0</div>
+                <div class="metric-sub">registered users</div>
+              </article>
+            </a>
+          </div>
+        </section>
+
+        <h2 class="section-heading">Administrative Workflow</h2>
+
+        <section class="dashboard-grid">
+          <article class="dash-widget schedule-widget">
+            <div class="widget-header">
+              <h3><i class="fa-solid fa-fire"></i> Event Approvals</h3>
+              <a href="Events.html" class="widget-link">Manage All</a>
+            </div>
+            <div id="dashboard-pending-events-list" class="widget-content">
+              <p class="empty-state">Loading pending events...</p>
+            </div>
+          </article>
+
+          <article class="dash-widget task-widget">
+            <div class="widget-header">
+              <h3>
+                <i class="fa-solid fa-list-check"></i> My Upcoming Deadlines
+              </h3>
+              <a href="calendar.html" class="widget-link">Manage</a>
+            </div>
+            <div id="dashboard-admin-task-list" class="widget-content">
+              <p class="empty-state">Loading personal tasks...</p>
+            </div>
+          </article>
+
+          <article class="dash-widget notice-widget">
+            <div class="widget-header">
+              <h3>
+                <i class="fa-solid fa-chart-bar"></i> Student Registration
+                Trends
+              </h3>
+              <a href="user_management.html" class="widget-link"
+                >User Management →</a
+              >
+            </div>
+            <div id="dashboard-student-trends" class="widget-content">
+              <p class="empty-state">Loading trends data...</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="../scripts/admin_home.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/footer.js"></script>
+  </body>
+</html>

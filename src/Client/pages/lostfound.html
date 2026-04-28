@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Campus Hub - Lost & Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/lostfound.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="navbar">
+        <div class="nav-inner">
+          <a href="prehome.html" target="_blank" class="nav-left-link">
+            <div class="nav-left">
+              <div class="logo-circle">HW</div>
+              <div class="nav-title">
+                <span class="nav-title-main">Student Hub</span>
+                <span class="nav-title-sub">Heriot-Watt University</span>
+              </div>
+            </div>
+          </a>
+
+          <nav class="nav-center">
+            <ul class="nav-menu">
+              <li>
+                <a id="dashLink" href="#"
+                  ><i class="fa-solid fa-gauge"></i>Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="./Events.html"
+                  ><i class="fa-solid fa-calendar-days"></i>Events</a
+                >
+              </li>
+              <li>
+                <a href="./calendar.html"
+                  ><i class="fa-regular fa-calendar"></i>Calendar</a
+                >
+              </li>
+
+              <li>
+                <a href="./lostfound.html" class="active">
+                  <i class="fa-solid fa-magnifying-glass-location"></i>Lost
+                  &amp; Found
+                </a>
+              </li>
+
+              <li>
+                <a href="./resources.html"
+                  ><i class="fa-solid fa-layer-group"></i>Resources</a
+                >
+              </li>
+              <li>
+                <a href="./noticeboard.html"
+                  ><i class="fa-solid fa-bullhorn"></i>Notices</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-right">
+            <span class="role-pill role-student" id="rolePill">
+              <i class="fa-solid fa-user-graduate"></i> Student
+            </span>
+
+            <div class="avatar-wrapper">
+              <div class="avatar-circle" id="avatarCircle"></div>
+
+              <div class="avatar-menu">
+                <span class="avatar-menu-label" id="avatarLabel"
+                  >Signed in as Student</span
+                >
+                <a href="./profile.html" class="avatar-menu-link">Profile</a>
+                <a href="login.html" class="avatar-menu-link logout-link"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="lf-header">
+          <h1 class="lf-title">Lost &amp; Found</h1>
+          <button class="lf-report-btn" id="openReportModal">
+            + Report Item
+          </button>
+        </section>
+
+        <section class="lf-tabs-row">
+          <button class="lf-tab lf-tab-active" data-tab="lost">
+            Lost Items (<span id="lostCount">0</span>)
+          </button>
+          <button class="lf-tab" data-tab="found">
+            Found Items (<span id="foundCount">0</span>)
+          </button>
+        </section>
+
+        <section class="lf-list-wrapper">
+          <div class="lf-list" id="lostList">
+            <p class="lf-empty-text">No lost items reported.</p>
+          </div>
+
+          <div class="lf-list lf-hidden" id="foundList">
+            <p class="lf-empty-text">No found items reported.</p>
+          </div>
+        </section>
+
+        <div class="modal hidden" id="reportModal">
+          <div class="modal-content">
+            <button id="closeModalBtn" class="modal-close">&times;</button>
+            <h3>Report Item</h3>
+
+            <form id="reportForm" class="modal-form">
+              <div class="modal-scroll-area">
+                <div class="form-group">
+                  <label for="itemTitle">Item Title</label>
+                  <input type="text" id="itemTitle" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="itemDescription">Description</label>
+                  <textarea id="itemDescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="itemCategory">Category</label>
+                  <input type="text" id="itemCategory" />
+                </div>
+
+                <div class="form-group">
+                  <label for="itemStatus">Status</label>
+                  <select id="itemStatus">
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="itemImage">Upload Image</label>
+                  <input type="file" id="itemImage" accept="image/*" />
+                </div>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  id="cancelReport"
+                  class="modal-btn danger"
+                >
+                  Cancel
+                </button>
+                <button type="submit" class="modal-btn primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/lostfound.js"></script>
+  </body>
+</html>

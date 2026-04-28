@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <title>Campus Hub - Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="../styles/home.css" />
+  <link rel="stylesheet" href="../styles/lostfound.css" />
+</head>
+<body>
+<div class="page">
+
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a href="prehome.html" target="_blank" class="nav-left-link">
+        <div class="nav-left">
+          <div class="logo-circle">HW</div>
+          <div class="nav-title">
+            <span class="nav-title-main">Student Hub</span>
+            <span class="nav-title-sub">Heriot-Watt University</span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="nav-center">
+        <ul class="nav-menu">
+  <li><a id="dashLink" href="#"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+
+  <li><a href="./Events.html" class="active">
+    <i class="fa-solid fa-calendar-days"></i>Events
+  </a></li>
+
+  <li><a href="./calendar.html"><i class="fa-regular fa-calendar"></i>Calendar</a></li>
+  <li><a href="./lostfound.html"><i class="fa-solid fa-magnifying-glass-location"></i>Lost &amp; Found</a></li>
+  <li><a href="./resources.html"><i class="fa-solid fa-layer-group"></i>Resources</a
+  ></li>
+  <li><a href="./noticeboard.html"><i class="fa-solid fa-bullhorn"></i>Notices</a></li>
+</ul>
+      </nav>
+
+      <div class="nav-right">
+        <span id="role-pill-container">
+          </span>
+        <div class="avatar-wrapper">
+          <div class="avatar-circle" id="avatar-initial">?</div>
+          <div class="avatar-menu" id="avatar-menu-links">
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="lf-header">
+      <div>
+        <h1 class="lf-title" id="page-title">Events</h1>
+        <p class="lf-subtitle" id="page-subtitle">...</p>
+      </div>
+
+      <button class="lf-report-btn" id="create-event-btn" style="display: none;">
+        + Create Event
+      </button>
+    </section>
+
+    
+    <div id="events-content-area">
+      </div>
+
+  </main>
+</div>
+
+<div id="eventModal" class="modal hidden">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        
+        <label><h2> Create New Event </h2> </label>
+       <label><h6> <i>  Add a new campus event for students </h6> </label>
+<br>
+            <form id="eventForm">
+            <input type="text" size="50" id="eventTitle" required placeholder="Event Title">
+<br>  
+</br>
+            <textarea rows="3" cols="52" placeholder="Description" id="eventDescription" required></textarea>
+<br>  
+
+            <label>Start Date & Time:</label><br>
+            <input type="date" id="eventStartDate" required>
+            <input type="time" id="eventStartTime" required>
+<br>  
+</br>
+            <label>End Date & Time:</label><br>
+            <input type="date" id="eventEndDate" required>
+            <input type="time" id="eventEndTime" required>
+<br>  
+<br>
+            <select name="subjects" id="subjects">
+              <option value="choose">*Choose an Education Department*</option>
+              <option value="macs">MACS</option>
+              <option value="gcd">Global College Dubai</option>
+              <option value="egis">Energy, Geoscience, infrastructure and Society</option>
+              <option value="eps">Engineering and Physical Sciences</option>
+              <option value="soss">School of Social Sciences</option>
+              <option value="ebsd">Edinburgh Business School - Dubai</option>
+              <option value="t&d">Textiles and Designs</option>
+              <option value="other">Other</option>
+              </select>
+<br>
+</br>
+            <input type="text" pattern="\d\.\d{2}" placeholder="Room Number (e.g., 5.35)" id="roomNo" required>
+<br>  
+
+</br>
+            <button type="submit" class="finalise-event-btn">Create Event</button>
+        </form>
+    </div>
+</div>
+
+<script src="../scripts/script.js"></script>
+<script src="../scripts/events.js"></script> </body>
+</html>

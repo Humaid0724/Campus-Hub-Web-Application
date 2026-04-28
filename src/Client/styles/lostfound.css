@@ -1,0 +1,122 @@
+/* =======================
+   BASIC UTILITIES
+======================= */
+/* .lf-hidden is now in home.css */
+
+/* main layout */
+.main {
+  max-width: 1180px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 1.5rem 2rem;
+}
+
+/* =======================
+   HEADER
+======================= */
+.lf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.lf-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.lf-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.lf-report-btn {
+  background: #f97316;
+  color: #ffffff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+}
+
+/* =======================
+   TABS
+======================= */
+.lf-tabs-row {
+  display: flex;
+  /* NOTE: Using space-between here. lf-tabs-row is in home.css but no justification.
+     Keeping this definition local to maintain the space-between look for this page. */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lf-tab:first-child {
+  margin-right: 0.5rem;
+}
+.lf-tab:last-child {
+  margin-left: 0.5rem;
+}
+
+/* =======================
+   ITEM CARD (Overrides to merged styles)
+======================= */
+
+/* Admin buttons - specific color overrides kept here if needed, but not strictly needed now
+   since home.css uses the same colors. Keeping the hover styles local for safety. */
+.lf-resolve-btn:hover {
+  background: #15803d;
+}
+
+.lf-delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* =======================
+   TOAST
+======================= */
+.lf-toast {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.35);
+  display: none;
+  z-index: 60;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .lf-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .lf-tabs-row {
+    flex-direction: column;
+  }
+
+  .lf-tab {
+    margin: 0.15rem 0 !important;
+  }
+
+  .lf-card {
+    flex-direction: column;
+  }
+
+  .lf-card img {
+    width: 100%;
+    height: 160px;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - User Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/noticeboard.css" />
+    <link rel="stylesheet" href="../styles/user_management.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="navbar">
+        <div class="nav-inner">
+          <a href="prehome.html" target="_blank" class="nav-left-link">
+            <div class="nav-left">
+              <div class="logo-circle">HW</div>
+              <div class="nav-title">
+                <span class="nav-title-main">Student Hub</span>
+                <span class="nav-title-sub">Heriot-Watt University</span>
+              </div>
+            </div>
+          </a>
+          <nav class="nav-center">
+            <ul class="nav-menu">
+              <li>
+                <a id="dashLink" href="#"
+                  ><i class="fa-solid fa-gauge"></i>Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="./Events.html"
+                  ><i class="fa-solid fa-calendar-days"></i>Events</a
+                >
+              </li>
+              <li>
+                <a href="./calendar.html"
+                  ><i class="fa-regular fa-calendar"></i>Calendar</a
+                >
+              </li>
+              <li>
+                <a href="./lostfound.html"
+                  ><i class="fa-solid fa-magnifying-glass-location"></i>Lost
+                  &amp; Found</a
+                >
+              </li>
+              <li>
+                <a href="./resources.html"
+                  ><i class="fa-solid fa-layer-group"></i>Resources</a
+                >
+              </li>
+              <li>
+                <a href="./noticeboard.html"
+                  ><i class="fa-solid fa-bullhorn"></i>Notices</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="nav-right">
+            <span id="rolePill" class="role-pill"></span>
+            <div class="avatar-wrapper">
+              <div class="avatar-circle" id="avatarCircle"></div>
+              <div class="avatar-menu">
+                <span class="avatar-menu-label" id="avatarLabel"></span>
+                <a href="./profile.html" class="avatar-menu-link">Profile</a>
+                <a href="login.html" class="avatar-menu-link logout-link"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="notice-header">
+          <div>
+            <h1 class="notice-title">User Management</h1>
+            <p class="notice-subtitle">
+              Overview of registered users and access controls.
+            </p>
+          </div>
+        </section>
+
+        <section class="roster-wrapper">
+          <div class="roster-header">
+            <div>Name</div>
+            <div>Email</div>
+            <div>Department</div>
+            <div>Role</div>
+            <div style="text-align: right">Actions</div>
+          </div>
+
+          <ul id="userRosterList" class="user-roster-list">
+            <li class="roster-empty-text">Loading user roster...</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/user_management.js"></script>
+  </body>
+</html>

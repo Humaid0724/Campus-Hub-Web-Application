@@ -1,0 +1,124 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #f6f4ff;
+  margin: 0;
+}
+
+/* HEADER & BUTTON STYLES */
+
+.resources-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  width: 150%;
+  max-width: 1500px;
+  margin-left: -20%;
+}
+.resources-header h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.resources-header p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.share-btn {
+  background: #f97316;
+  color: #ffffff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+  width: auto;
+  margin-left: 0;
+  background-image: none;
+  gap: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.share-btn .fa-plus {
+  margin-right: 0.5rem;
+}
+
+.share-btn:hover {
+  background: #f97316;
+  opacity: 0.9;
+  background-image: none;
+}
+
+/* TABS, LISTS, AND CARDS */
+
+.lf-tabs-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 8px;
+}
+
+/* --- List Wrapper (Padding Override) --- */
+.lf-list-wrapper {
+  padding: 1.3rem 0 1.6rem;
+}
+
+.lf-list {
+  padding: 1.2rem 1.5rem;
+}
+
+/* Custom style for the download button (color override) */
+a.lf-resolve-btn {
+  background-color: #3b82f6 !important; /* Blue for download */
+}
+
+/* MODAL STYLES (Overrides for light modal content) */
+
+#closeModalBtn {
+  /* Dark color for 'X' button inside light modal */
+  color: #111827 !important;
+}
+
+#resourceModal h3 {
+  color: #111827 !important;
+}
+
+#resourceModal p {
+  color: #374151 !important;
+}
+
+/* FIX: Placeholder/Input Contrast */
+#resourceModal .form-group input,
+#resourceModal .form-group select,
+#resourceModal .form-group textarea {
+  /* Use solid light colors for inputs */
+  background: #f9fafb !important;
+  color: #111827 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+#resourceModal .form-group input::placeholder,
+#resourceModal .form-group textarea::placeholder {
+  /* FIX: Ensure placeholder is visible against light background */
+  color: #6b7280;
+  opacity: 1;
+}
+
+#resourceModal form button {
+  /* Overriding unified modal button styles to match the page theme */
+  padding: 10px 20px;
+  background-color: #4b6cb7;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#resourceModal form button:hover {
+  background-color: #0056b3;
+}

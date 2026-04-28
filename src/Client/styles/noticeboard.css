@@ -1,0 +1,260 @@
+/* =========================================
+   NOTICE BOARD - HIGHLIGHT / GRID THEME
+   ========================================= */
+
+/* --- Page Layout Fixes --- */
+/* Ensure main container allows full width for the grid */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- 1. New Header Design (Cleaner, less bulky) --- */
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  width: 100%;
+  max-width: 1500px;
+  margin-left: 0%;
+}
+
+.notice-header div {
+  flex: 1;
+}
+
+.notice-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    90deg,
+    #4f46e5,
+    #9333ea
+  ); /* Purple/Blue Text Gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.notice-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* --- Create Button (Modern & Pill shaped) --- */
+.create-notice-btn {
+  background: #111827; /* Dark/Black button for contrast */
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: none; /* JS toggles this */
+  align-items: center;
+  gap: 8px;
+}
+
+.create-notice-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #000;
+}
+
+/* --- 2. The Grid Layout (The "Highlight" feel) --- */
+.notices-wrapper {
+  background: transparent; /* Remove the old purple box background */
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.notices-list {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: grid;
+  /* Auto-fit columns: roughly 3 cards per row on desktop */
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1500px;
+  margin-left: 0%;
+}
+
+/* --- 3. Card Styling --- */
+.notice-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.notice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+/* Decorative top border for all cards */
+.notice-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb; /* Default grey */
+}
+
+/* --- 4. "PINNED" Card (The Hero / Headline) --- */
+.notice-card.pinned {
+  /* Make pinned items span the full width */
+  grid-column: 1 / -1;
+
+  background: linear-gradient(135deg, #ffffff 0%, #fdf4ff 100%);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 10px 30px rgba(147, 51, 234, 0.1);
+  padding: 2rem; /* Bigger padding */
+}
+
+.notice-card.pinned::before {
+  background: linear-gradient(
+    90deg,
+    #f97316,
+    #ec4899,
+    #6366f1
+  ); /* Vibrant gradient top */
+  height: 6px; /* Thicker line */
+}
+
+.notice-card.pinned .notice-title-text {
+  font-size: 1.5rem; /* Larger title */
+}
+
+.notice-card.pinned .notice-content {
+  font-size: 1rem; /* Larger text */
+  color: #374151;
+}
+
+/* --- Card Internals --- */
+.notice-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.notice-title-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+/* The Badge */
+.notice-pin-badge {
+  background: #fef3c7;
+  color: #d97706;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.notice-pin-badge::before {
+  content: "\f08d"; /* FontAwesome pin icon code */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.notice-content {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  flex-grow: 1; /* Pushes meta to bottom */
+  margin-bottom: 1.2rem;
+  white-space: pre-wrap; /* Preserves paragraphs */
+}
+
+.notice-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* --- Admin Actions --- */
+.notice-admin-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.notice-admin-actions button {
+  /* Inherits button base from home.css and overrides */
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.delete-btn:hover {
+  background: #fca5a5;
+}
+
+.pin-btn {
+  background: #f3f4f6;
+  color: #374151;
+}
+.pin-btn:hover {
+  background: #e5e7eb;
+}
+
+.pin-btn.unpin {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+/* Empty state - using lf-empty-text from home.css */
+.notice-empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  padding: 4rem 0;
+  border: 2px dashed #e5e7eb;
+  border-radius: 12px;
+}

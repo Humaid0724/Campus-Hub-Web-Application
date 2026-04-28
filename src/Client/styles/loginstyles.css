@@ -1,0 +1,247 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ===== BODY LAYOUT ===== */
+body {
+  background-image: url('../../../public/images/Log in Background.png');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling (optional) */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+/* Keep everything centered nicely */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.site-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.hw-bold {
+  color: #111;
+}
+
+.hw-accent {
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-header p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* ========== LOGIN CARD ========== */
+.login-box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-box h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.login-box p {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* Microsoft Sign-in button */
+.ms-login-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.ms-login-btn:hover {
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  transform: translateY(-1px);
+}
+
+.ms-login-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.register-btn {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #c73bf6, #a855f7);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #9b2af6, #9333ea);
+  transform: translateY(-1px);
+}
+
+.register-btn a {
+  color: #ffffff; /* same as Tailwind's blue-500 */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+/* Button to return to pre log in page */
+.back-home {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-home a {
+  color: #3b82f6; /* same as Tailwind's blue-500 */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.back-home a:hover {
+  text-decoration: underline;
+  color: #2563eb; /* slightly darker blue on hover */
+}
+
+
+/* ========== FEATURE CARDS ========== */
+.feature-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.tile {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 130px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.tile img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+}
+
+.tile span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 2rem 1.5rem;
+  }
+
+  .tile {
+    width: 45%;
+  }
+}

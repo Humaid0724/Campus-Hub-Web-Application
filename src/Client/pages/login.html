@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heriot-Watt Student Hub</title>
+  <link rel="stylesheet" href="../styles/loginstyles.css">
+</head>
+<body>
+  <main>
+    <!-- HEADER -->
+    <header class="site-header">
+      <h1><span class="hw-bold">Heriot-Watt</span> <span class="hw-accent">Student Hub</span></h1>
+      <p>Your all-in-one platform for campus life – events, academics, resources, and community</p>
+    </header>
+
+    <!-- LOGIN CARD -->
+    <div class="login-box">
+      <h2>Welcome Back</h2>
+      <p>Sign in with your Heriot-Watt University account</p>
+
+      <form id="loginForm">
+        <input
+            type="email"
+            id="email"
+            placeholder="your.email@hw.ac.uk"
+            required
+        />
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+        />
+        <button type="submit" class="ms-login-btn">
+            <img src="../../../public/images/Microsoft Logo.png" alt="Microsoft logo" />
+            Sign in with Microsoft
+        </button>
+
+        <button type="submit" class="register-btn">
+            <a href="register.html">Register New Account</a>
+        </button>
+        
+        </form>
+    
+      <div class="back-home">
+        <a href="prehome.html">Return to Home Page</a>
+      </div>
+    </div>
+
+    <!-- FEATURE TILES -->
+    <section class="feature-row">
+      <div class="tile">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="calendar">
+        <span>Events &amp; RSVP</span>
+      </div>
+      <div class="tile">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="task">
+        <span>Task Manager</span>
+      </div>
+      <div class="tile">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828970.png" alt="resources">
+        <span>Resources</span>
+      </div>
+      <div class="tile">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828945.png" alt="notices">
+        <span>Notices</span>
+      </div>
+    </section>
+
+    <footer>
+      
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/login.js"></script>
+  
+</body>
+</html>

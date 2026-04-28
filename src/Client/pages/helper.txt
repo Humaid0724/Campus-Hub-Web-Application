@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
+        <h1 class="text-2xl font-bold text-center mb-6">Log In</h1>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Log In</button>
+        </form>
+        <p class="text-sm text-center text-gray-600 mt-4">Sign in using your Heriot-Watt Email ID<br>
+            <a href="prehome.html" class="text-blue-500 hover:underline">Return to Home Page</a>
+        </p>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heriot-Watt University Dubai - Header Replica</title>
+    <!-- Link to Tailwind CSS for utility-based styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Import custom font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Define theme colors and font variables */
+        :root {
+            --primary-color: #0A3E65; /* Dark Blue */
+            --secondary-color: #A0B0C0; /* Light Gray/Blue */
+            --accent-color: #FFC000; /* Gold/Yellow for highlights */
+            --text-light: #ffffff; /* White text color */
+            --font-inter: 'Inter', sans-serif; /* Inter font family */
+        }
+
+        /* Apply global styles to the body */
+        body {
+            font-family: var(--font-inter); /* Use Inter font */
+            min-height: 100vh; /* Ensure body takes full height */
+            background-color: #f8f8f8; /* Light gray background */
+        }
+
+        /* Styling for the main header */
+        .main-header {
+            background-color: var(--primary-color); /* Dark blue background */
+            padding: 15px 30px; /* Add padding around header */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space between logo and buttons */
+            align-items: center; /* Center items vertically */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        /* Styling for the logo link */
+        .logo a {
+            color: var(--text-light); /* White text color */
+            text-decoration: none; /* Remove underline */
+            font-size: 1.5em; /* Increase font size */
+            font-weight: 700; /* Bold text */
+            transition: color 0.2s; /* Smooth color transition */
+        }
+
+        /* Change logo link color on hover */
+        .logo a:hover {
+            color: var(--accent-color); /* Gold color on hover */
+        }
+
+        /* Container for header action buttons */
+        .header-actions {
+            display: flex; /* Use flexbox for layout */
+            gap: 12px; /* Add space between buttons */
+            align-items: center; /* Center buttons vertically */
+        }
+
+        /* General styling for action buttons */
+        .action-btn {
+            padding: 10px 15px; /* Add padding inside buttons */
+            font-size: 0.95em; /* Set font size */
+            font-weight: 600; /* Semi-bold text */
+            cursor: pointer; /* Change cursor to pointer */
+            border: 2px solid transparent; /* Transparent border */
+            border-radius: 6px; /* Rounded corners */
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.1s; /* Smooth transitions */
+            text-transform: uppercase; /* Uppercase text */
+        }
+
+        /* Scale button slightly on click */
+        .action-btn:active {
+            transform: scale(0.98); /* Slightly shrink button */
+        }
+
+        /* Styling for the 'Sign In' button */
+        .sign-in {
+            background-color: transparent; /* Keep background colorless */
+            color: var(--text-light); /* White text */
+            border-color: var(--text-light); /* White border */
+        }
+
+        /* Change 'Sign In' button color on hover */
+        .sign-in:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Slight white tint on hover */
+            border-color: var(--text-light); /* Keep white border */
+        }
+
+        /* Hide mobile icon by default */
+        .mobile-icon {
+            display: none; /* Hidden */
+        }
+
+        /* Responsive styles for mobile view */
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 10px 15px; /* Reduce padding */
+            }
+
+            .logo a {
+                font-size: 1.2em; /* Smaller font size */
+            }
+
+            /* Hide desktop text in menu button */
+            .menu-toggle .desktop-text {
+                display: none; /* Hidden */
+            }
+
+            /* Show mobile icon in menu button */
+            .menu-toggle .mobile-icon {
+                display: inline; /* Visible */
+                font-size: 1.5em; /* Larger icon size */
+            }
+
+            /* Reduce button padding on mobile */
+            .action-btn {
+                padding: 8px 10px; /* Smaller padding */
+                font-size: 0.85em; /* Smaller font size */
+            }
+        }
+
+        /* Styling for the custom message box */
+        #message-box {
+            position: fixed; /* Fixed position */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for exact center */
+            background-color: white; /* White background */
+            padding: 20px 30px; /* Add padding */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Add shadow */
+            z-index: 1000; /* Place above other elements */
+            display: none; /* Initially hidden */
+            max-width: 90%; /* Limit width */
+            text-align: center; /* Center text */
+        }
+
+        /* Overlay for the message box */
+        #message-box-overlay {
+            position: fixed; /* Fixed position */
+            top: 0; /* Cover entire screen */
+            left: 0; /* Cover entire screen */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            z-index: 999; /* Place below message box */
+            display: none; /* Initially hidden */
+        }
+
+        /* Styling for the OK button in the message box */
+        #message-box button {
+            margin-top: 15px; /* Add margin above button */
+            background-color: var(--primary-color); /* Dark blue background */
+            color: var(--text-light); /* White text */
+            padding: 8px 20px; /* Add padding */
+            border-radius: 4px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <!-- Logo section with image and link -->
+        <div class="logo">
+            <img src="/public/images/HWUD%20Logo.png" alt="Heriot-Watt University Dubai Logo" class="h-16 mr-4" />
+        </div>
+
+        <!-- Navigation/Action Buttons on the Right -->
+        <nav class="header-actions">
+            <!-- Sign In button -->
+            <a href="login.html" id="signInBtn" class="action-btn sign-in">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content p-8 max-w-6xl mx-auto mt-10 bg-white shadow-lg rounded-xl">
+        <!-- Page title -->
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-4">University Overview</h1>
+        <!-- Introductory paragraph -->
+        <p class="text-gray-600 mb-6">This section represents the main content of the university website, following the functional header structure.</p>
+
+        <!-- Grid layout for content sections -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Section for programmes -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Our Programmes</h2>
+                <p class="text-gray-700">Explore undergraduate and postgraduate degrees across Engineering, Business, Design, and more.</p>
+            </div>
+
+            <!-- Section for campus life -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Campus Life</h2>
+                <p class="text-gray-700">Discover student activities, clubs, and the vibrant environment of our Dubai Knowledge Park campus.</p>
+            </div>
+
+            <!-- Section for admissions -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Admissions</h2>
+                <p class="text-gray-700">Find out about entry requirements, application deadlines, and scholarship opportunities.</p>
+            </div>
+        </div>
+
+        <!-- Disclaimer section -->
+        <div class="mt-10 p-6 bg-gray-100 rounded-lg">
+            <p class="text-sm text-gray-500">
+                Disclaimer: This page is a structural replica of a public university header created for demonstration purposes. Content is mock data.
+            </p>
+        </div>
+    </main>
+
+    <!-- Custom Message Box Structure -->
+    <div id="message-box-overlay" class="rounded-lg"></div>
+    <div id="message-box">
+        <p id="message-text" class="text-gray-700 font-semibold"></p>
+        <button id="message-ok-btn" class="action-btn">OK</button>
+    </div>
+
+    <!-- JavaScript for Button Interactivity -->
+    <script>
+        // Function to display custom message box instead of alert()
+        function showMessage(message) {
+            const box = document.getElementById('message-box');
+            const overlay = document.getElementById('message-box-overlay');
+            const text = document.getElementById('message-text');
+            const okBtn = document.getElementById('message-ok-btn');
+
+            text.textContent = message; // Set the message text
+            box.style.display = 'block'; // Show the message box
+            overlay.style.display = 'block'; // Show the overlay
+
+            okBtn.onclick = () => {
+                box.style.display = 'none'; // Hide the message box
+                overlay.style.display = 'none'; // Hide the overlay
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const signInBtn = document.getElementById('signInBtn');
+
+            // Add click event listener for the 'Sign In' button
+            signInBtn.addEventListener('click', () => {
+                showMessage('Opening the Sign In / Login Modal or Page...');
+            });
+        });
+    </script>
+</body>
+</html>

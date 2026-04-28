@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - Campus Hub</title>
+
+    <link rel="stylesheet" href="../styles/register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="../../../public/images/Heriot-Watt_University_logo.png"
+          alt="Heriot-Watt University Dubai Logo"
+        />
+        <h1>Create Your Account</h1>
+        <p>Join the Campus Hub today.</p>
+      </div>
+
+      <form id="registerForm" class="form-grid">
+        <div class="form-group-split">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" required />
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="department">School/Department</label>
+          <select id="department" required>
+            <option value="" disabled selected>Select your school</option>
+            <option value="Global College Dubai">Global College Dubai</option>
+            <option value="Energy, Geoscience, Infrastructure and Society">
+              Energy, Geoscience, Infrastructure and Society
+            </option>
+            <option value="Engineering and Physical Sciences">
+              Engineering and Physical Sciences
+            </option>
+            <option value="Mathematical and Computer Sciences">
+              Mathematical and Computer Sciences
+            </option>
+            <option value="School of Social Sciences">
+              School of Social Sciences
+            </option>
+            <option value="Edinburgh Business School - Dubai">
+              Edinburgh Business School - Dubai
+            </option>
+            <option value="Textiles and Design">Textiles and Design</option>
+          </select>
+        </div>
+
+        <div class="form-group-split">
+          <div class="form-group">
+            <label for="campus">Campus</label>
+            <input type="text" id="campus" value="Dubai" required />
+          </div>
+          <div class="form-group">
+            <label for="study_year">Year of Study</label>
+            <input
+              type="number"
+              id="study_year"
+              min="1"
+              max="5"
+              placeholder="e.g., 2"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="major">Major (e.g., Software Engineering)</label>
+          <input type="text" id="major" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Heriot-Watt Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="student@hw.ac.uk"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password"
+            >Password (Min. 6 chars, 1 uppercase, 1 number)</label
+          >
+          <input type="password" id="password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+      </form>
+
+      <div class="login-link">
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+      </div>
+    </div>
+
+    <script src="../scripts/register.js" defer></script>
+  </body>
+</html>

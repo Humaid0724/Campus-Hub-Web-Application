@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campus Hub - Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="../styles/home.css" />
+
+  <!-- Calendar stylesheet -->
+  <link rel="stylesheet" href="../styles/calendar.css" />
+</head>
+
+<body>
+<div class="page">
+
+    <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a href="prehome.html" target="_blank" class="nav-left-link">
+        <div class="nav-left">
+          <div class="logo-circle">HW</div>
+          <div class="nav-title">
+            <span class="nav-title-main">Student Hub</span>
+            <span class="nav-title-sub">Heriot-Watt University</span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="nav-center">
+        <ul class="nav-menu">
+  <li><a id="dashLink" href="#"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+  <li><a href="./Events.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+  <li><a href="./calendar.html" class="active">
+    <i class="fa-regular fa-calendar"></i>Calendar
+  </a></li>
+
+  <li><a href="./lostfound.html"><i class="fa-solid fa-magnifying-glass-location"></i>Lost &amp; Found</a></li>
+  <li><a href="./resources.html"><i class="fa-solid fa-layer-group"></i>Resources</a></li>
+  <li><a href="./noticeboard.html"><i class="fa-solid fa-bullhorn"></i>Notices</a></li>
+</ul>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill role-student" id="rolePill">
+          <i class="fa-solid fa-user-graduate"></i> Student
+        </span>
+
+        <div class="avatar-wrapper">
+          <div class="avatar-circle" id="avatarCircle"></div>
+
+          <div class="avatar-menu">
+            <span class="avatar-menu-label" id="avatarLabel">Signed in as Student</span>
+            <a href="./profile.html" class="avatar-menu-link">Profile</a>
+            <a href="login.html" class="avatar-menu-link logout-link">Logout</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="container">
+
+    <section class="calendar-panel">
+
+      <div class="calendar-header">
+        <div class="view-controls">
+          <button id="prevBtn" class="btn">&lt;</button>
+          <h2 id="currentLabel">Month Year</h2>
+          <button id="nextBtn" class="btn">&gt;</button>
+        </div>
+
+        <div class="view-toggle">
+          <button id="monthViewBtn" class="btn primary">Month</button>
+          <button id="weekViewBtn" class="btn">Week</button>
+          <button id="todayBtn" class="btn">Today</button>
+        </div>
+      </div>
+
+      <div id="calendarRoot" class="calendar-root"></div>
+
+    </section>
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3>Events & Tasks</h3>
+        <ul id="eventList" class="event-list"></ul>
+        <button id="addEventBtn" class="btn primary">Add Task</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ========= MODAL ========== -->
+<div id="eventModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-content">
+
+    <button id="closeModal" class="modal-close">&times;</button>
+    <h3 id="modalTitle">Add Event</h3>
+
+    <form id="eventForm" class="modal-form">
+
+      <div class="form-group">
+        <label for="evtTitle">Event Name</label>
+        <input type="text" id="evtTitle" required>
+      </div>
+
+      <div class="form-group">
+        <label for="evtDate">Date</label>
+        <input type="date" id="evtDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="evtStart">Start Time</label>
+        <input type="time" id="evtStart">
+      </div>
+
+      <div class="form-group">
+        <label for="evtEnd">End Time</label>
+        <input type="time" id="evtEnd">
+      </div>
+
+      <div class="modal-actions">
+  <button type="submit" class="modal-btn primary">Save</button>
+  <button type="button" id="deleteEventBtn" class="modal-btn danger hidden">Delete</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+<script src="../scripts/nav.js"></script>
+ <script src="../scripts/script.js"></script>
+<script src="../scripts/calendar.js" defer></script>
+
+</body>
+</html>
